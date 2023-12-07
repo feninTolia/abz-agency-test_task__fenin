@@ -1,0 +1,36 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+
+  max-width: 37em;
+  padding: 2em;
+  text-align: center;
+
+  background-color: var(--white-clr);
+  border-radius: 1.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  & p {
+    margin: 0;
+    font-size: 1.6em;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.avatar {
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+  object-fit: cover;
+  background-color: var(--gray-dark-clr);
+}
+
+.card-info {
+  width: 100%;
+}
