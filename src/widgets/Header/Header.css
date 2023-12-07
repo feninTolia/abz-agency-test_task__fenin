@@ -1,0 +1,33 @@
+.header-wrapper {
+  background-color: var(--white-clr);
+  width: 100%;
+}
+
+.header {
+  margin: 0 auto;
+  padding-block: 1.7em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1170px) {
+    width: 117em;
+  }
+  @media screen and (max-width: 1169px) {
+    padding-inline: 6em;
+  }
+  @media screen and (max-width: 1023px) {
+    padding-inline: 3.2em;
+  }
+  @media screen and (max-width: 767px) {
+    padding-inline: 1.6em;
+  }
+  @media screen and (max-width: 360px) {
+    width: 36em;
+  }
+}
+
+.buttons-group {
+  display: flex;
+  gap: 1em;
+}

@@ -1,0 +1,10 @@
+.root-layout {
+  margin: 0 auto;
+
+  @media screen and (min-width: 1170px) {
+    width: 117em;
+  }
+  @media screen and (max-width: 360px) {
+    width: 36em;
+  }
+}
