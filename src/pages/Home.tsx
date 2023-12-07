@@ -1,8 +1,9 @@
+import Hero from '../widgets/Hero/Hero';
+
 const Home = () => {
   return (
-    <div style={{ fontSize: '1.6em' }}>
-      Home\
-      <hr />
+    <div>
+      <Hero />
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis autem
       explicabo neque consequuntur corporis cupiditate illum mollitia
       evenietisi, deleniti itaque soluta id quos quae unde dolorum mollitia
