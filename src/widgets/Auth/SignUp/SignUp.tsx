@@ -14,13 +14,13 @@ const SignUp = () => {
   const [photoFile, setPhotoFile] = useState<string | File>('');
 
   const tokenData = queryClient.getQueryData<TokenDTO>(['token']);
-
   const { data: positionsData } = useQuery({
     queryKey: [queryKeys.positions],
     queryFn: () => userAuthController.getPositions(),
   });
 
-  const { mutate } = useMutation({
+  const { mutate, isSuccess, isPending } = useMutation({
+    mutationKey: ['signup'],
     mutationFn: ({
       formData,
       token,
@@ -29,6 +29,12 @@ const SignUp = () => {
       token: string;
     }) => {
       return userAuthController.signUp(formData, token);
+    },
+    onError: (e) => {
+      alert(e);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: [queryKeys.users] });
     },
   });
 
@@ -61,6 +67,8 @@ const SignUp = () => {
           <SignUpForm
             positions={positionsData?.positions}
             setPhotoFile={setPhotoFile}
+            isSuccessSubmit={isSuccess}
+            isSignUpPending={isPending}
           />
         )}
       </Formik>
