@@ -3,26 +3,17 @@ import ShowMoreUsersBtn from '../../features/Buttons/ShowMoreUsersBtn';
 import UserCard from '../../shared/ui/InfoCards/UserCard/UserCard';
 import './Users.css';
 import { queryKeys } from '../../shared/lib/constants';
-
-interface IUser {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  position: string;
-  position_id: string;
-  registration_timestamp: number;
-  photo: string;
-}
+import { useState } from 'react';
+import { userAuthController } from '../../entities/User/api/controller/user-auth.controller';
+import { UsersDTO } from '../../entities/User/api/dto/user-response.dto';
 
 const Users = () => {
-  const { data } = useQuery<{ users: IUser[] }>({
-    queryKey: [queryKeys.users],
+  const [page, setPage] = useState(1);
+
+  const { data, refetch } = useQuery<UsersDTO>({
+    queryKey: [queryKeys.users, page],
     queryFn: async () => {
-      const usersResponse = await fetch(
-        'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6'
-      );
-      return usersResponse.json();
+      return userAuthController.getUsers(page);
     },
   });
 
@@ -41,7 +32,13 @@ const Users = () => {
           />
         ))}
       </div>
-      <ShowMoreUsersBtn />
+      <ShowMoreUsersBtn
+        onClick={() => {
+          setPage((old) => old + 1);
+          refetch();
+        }}
+        disabled={data?.total_pages === page}
+      />
     </section>
   );
 };
