@@ -12,7 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --bg-clr: #f8f8f8;
+  --black-clr: #000000de;
   --white-clr: #fff;
+  --error-clr: #cb3d40;
   --primary-clr: #f4e041;
   --primary-bright-clr: #ffe302;
   --secondary-clr: #00bdd3;

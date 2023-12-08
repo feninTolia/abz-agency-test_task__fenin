@@ -8,5 +8,5 @@ export const signUpSchema = yup.object().shape({
     .matches(/^[+]{0,1}380([0-9]{9})$/, 'Invalid phone number format')
     .required('Phone number is required'),
   position_id: yup.string().required('required'),
-  formikPhoto: yup.string().required('required'),
+  formikPhoto: yup.string().required('jpeg/jpg photo is required'),
 });

@@ -1,0 +1,25 @@
+.text-inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+
+  width: 38em;
+
+  @media screen and (max-width: 767px) {
+    width: 32.8em;
+  }
+}
+
+.radio-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-self: start;
+  margin-top: -2.5em;
+}
+
+.radio-buttons-label {
+  font-size: 1.6em;
+  font-family: inherit;
+  color: inherit;
+}

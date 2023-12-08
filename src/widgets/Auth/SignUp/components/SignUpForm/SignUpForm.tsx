@@ -7,6 +7,7 @@ import UploadFile from '../UploadFile/UploadFile';
 import Button from '../../../../../shared/ui/Buttons/Button';
 import { useFormikContext } from 'formik';
 import { IValues } from '../../../../../shared/types';
+import './SignUpForm.css';
 
 interface IProps {
   positions?: { id: number; name: string }[];

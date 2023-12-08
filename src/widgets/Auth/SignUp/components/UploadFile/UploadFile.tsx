@@ -2,6 +2,7 @@ import { TextField } from '@mui/material';
 import { useFormikContext } from 'formik';
 import { IValues } from '../../../../../shared/types';
 import MUIButton from '@mui/material/Button';
+import './UploadFile.css';
 
 interface IProps {
   setPhotoFile: React.Dispatch<React.SetStateAction<string | File>>;
@@ -11,13 +12,13 @@ const UploadFile = ({ setPhotoFile }: IProps) => {
     useFormikContext<IValues>();
 
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div className="wrapper">
       <MUIButton
         variant="outlined"
         style={{
           position: 'absolute',
           zIndex: 10,
-          backgroundColor: 'white',
+          backgroundColor: 'var(--bg-clr)',
           top: 0,
           fontSize: '1em',
           height: '5.6em',
@@ -26,16 +27,18 @@ const UploadFile = ({ setPhotoFile }: IProps) => {
           textTransform: 'capitalize',
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
+          color: 'inherit',
           borderColor:
             Boolean(touched.formikPhoto) && Boolean(errors.formikPhoto)
-              ? 'red'
-              : 'gray',
+              ? 'var(--error-clr)'
+              : 'var(--black-clr)',
         }}
       >
         <span style={{ fontSize: '1.6em' }}>Upload</span>
       </MUIButton>
 
       <TextField
+        placeholder="ddd"
         type="file"
         name="formikPhoto"
         onBlur={handleBlur}
