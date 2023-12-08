@@ -1,0 +1,56 @@
+.signup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5em;
+
+  & h2 {
+    margin: 0;
+    font-size: 4em;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  @media screen and (max-width: 1169px) {
+    padding-inline: 6em;
+  }
+  @media screen and (max-width: 1023px) {
+    padding-inline: 3.2em;
+  }
+  @media screen and (max-width: 767px) {
+    padding-inline: 1.6em;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  align-items: center;
+}
+
+.text-inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+
+  width: 38em;
+}
+
+.resize {
+  font-size: 1.6em !important;
+}
+
+.radio-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-self: start;
+  margin-top: -2.5em;
+}
+
+.radio-buttons-label {
+  font-size: 1.6em;
+  font-family: inherit;
+  color: inherit;
+}
