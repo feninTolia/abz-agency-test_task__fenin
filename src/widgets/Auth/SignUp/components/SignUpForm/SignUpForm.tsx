@@ -39,7 +39,10 @@ const SignUpForm = ({
       </div>
 
       <div className="radio-buttons-wrapper">
-        <FormLabel id="positions-label" className="radio-buttons-label">
+        <FormLabel
+          id="positions-label"
+          style={{ fontSize: '1.6em', fontFamily: 'inherit', color: 'inherit' }}
+        >
           Select your position
         </FormLabel>
         <RadioGroup
