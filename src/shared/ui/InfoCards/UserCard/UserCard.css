@@ -4,6 +4,7 @@
   gap: 2em;
   align-items: center;
 
+  min-width: 28em;
   max-width: 37em;
   padding: 2em;
   text-align: center;
